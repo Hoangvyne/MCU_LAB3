@@ -20,10 +20,8 @@ void fsm_traffic_horizontal_run(){
 			fsm_traffic_blink_horizontal_run();
 			break;
 		case modifying_led_red_horizontal:
-			// turn off led green and yellow
 			offGreenYellow_horizontal();
 			if(timer8_flag == 1){
-				//toggle led red with frequency 2Hz
 				toggleRed_horizontal();
 				setTimer8(500);
 			}

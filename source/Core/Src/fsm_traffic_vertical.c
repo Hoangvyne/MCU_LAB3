@@ -30,10 +30,10 @@ void fsm_traffic_vertical_run(){
 			}
 			break;
 		case modifying_led_green_vertical:
-			// turn off red and yellow led
+
 			offRedYellow_vertical();
 			if(timer7_flag == 1){
-				//toggle green led with frequency 2Hz
+
 				toggleGreen_vertical();
 				setTimer7(500);
 			}
