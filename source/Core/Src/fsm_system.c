@@ -41,7 +41,7 @@ fsm_system_run(){
 			_7SEG_buffer_vertical[0] = time_red_vertical/10;
 			_7SEG_buffer_vertical[1] = time_red_vertical%10;
 
-			//nut nhan ba duoc dung de set gia tri
+			//nut nhan ba duoc dung de luu gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_red_horizontal_temp= time_red_horizontal;
 				time_red_vertical_temp= time_red_vertical;
@@ -66,7 +66,7 @@ fsm_system_run(){
 			_7SEG_buffer_vertical[0] = time_yellow_vertical/10;
 			_7SEG_buffer_vertical[1] = time_yellow_vertical%10;
 
-			//nut nhan ba duoc dung de set gia tri
+			//nut nhan ba duoc dung de luu gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_yellow_horizontal_temp= time_yellow_horizontal;
 				time_yellow_vertical_temp= time_yellow_vertical;
@@ -89,7 +89,7 @@ fsm_system_run(){
 			_7SEG_buffer_vertical[0] = time_green_vertical/10;
 		    _7SEG_buffer_vertical[1] = time_green_vertical%10;
 
-			//nut nhan ba duoc dung de set gia tri
+			//nut nhan ba duoc dung de luu gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_green_horizontal_temp= time_green_horizontal;
 				time_green_vertical_temp= time_green_vertical;
