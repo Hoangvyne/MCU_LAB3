@@ -11,19 +11,19 @@ int TICK = 10;//time cycle
 int timer1_flag = 0;
 int timer1_counter = 0;
 
-// timer2 is used to update led 7-SEG
+
 int timer2_flag = 0;
 int timer2_counter = 0;
 
-// timer3 is uesd to control LED-RED and DOT-LED
+
 int timer3_flag = 0;
 int timer3_counter = 0;
 
-// timer4 is used to update led matrix
+
 int timer4_flag = 0;
 int timer4_counter = 0;
 
-// timer5 is used to update buffer led matrix
+
 int timer5_flag = 0;
 int timer5_counter = 0;
 
@@ -42,31 +42,31 @@ int timer9_counter = 0;
 int timer10_flag = 0;
 int timer10_counter = 0;
 
-//timer for update clockbuffer
+
 void setTimer1(int duration){
 	timer1_counter = duration/TICK;
 	timer1_flag = 0;
 }
 
-//timer for update 7SEG led
+
 void setTimer2(int duration){
 	timer2_counter = duration/TICK;
 	timer2_flag = 0;
 }
 
-//timer for control LED-RED and DOT-LED
+
 void setTimer3(int duration){
 	timer3_counter = duration/TICK;
 	timer3_flag = 0;
 }
 
-//timer for update led matrix
+
 void setTimer4(int duration){
 	timer4_counter = duration/TICK;
 	timer4_flag = 0;
 }
 
-//timer for update buffer led matrix
+
 void setTimer5(int duration){
 	timer5_counter = duration/TICK;
 	timer5_flag = 0;

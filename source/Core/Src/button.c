@@ -73,22 +73,18 @@ int isButton_BUT3_LongPressed(){
 void getKeyInput()
 {
 	for(int i = 0; i < 3; i++){
-		// button debouncing
 		keyReg0[i] = keyReg1[i];
 		keyReg1[i] = keyReg2[i];
-		//handle button 1
 		if(i == 0){
 			keyReg2[i] = HAL_GPIO_ReadPin(BUT1_GPIO_Port, BUT1_Pin);
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
 			{
-				 //case short pressed
-				if(keyReg3[i] != keyReg2[i])
+				 if(keyReg3[i] != keyReg2[i])
 				{
-					keyReg3[i] = keyReg2[i]; // update for keyReg3
+					keyReg3[i] = keyReg2[i];
 					if(keyReg2[i] == PRESSED_STATE)
 					{
-						//TODO
 						button_BUT1_flag = 1;
 						timerForKeyPress = 300;
 					}
@@ -99,7 +95,6 @@ void getKeyInput()
 						timerForKeyPress--;
 						if(timerForKeyPress == 0)
 						{
-							//TODO
 							button_BUT1_LongPressed_flag = 1;
 							timerForKeyPress = 300;
 						}
@@ -107,30 +102,30 @@ void getKeyInput()
 				}
 			}
 		}
-		//handle button 2
+
 		if(i == 1){
 			keyReg2[i] = HAL_GPIO_ReadPin(BUT2_GPIO_Port, BUT2_Pin);
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
 			{
-				//case short pressed
+
 				if(keyReg3[i] != keyReg2[i])
 				{
-					keyReg3[i] = keyReg2[i]; // update for keyReg3
+					keyReg3[i] = keyReg2[i];
 					if(keyReg2[i] == PRESSED_STATE)
 					{
-						//TODO
+
 						button_BUT2_flag = 1;
 						timerForKeyPress = 300;
 					}
 				}
-				else// key long pressed
+				else
 				{
 					if(keyReg2[i] == PRESSED_STATE){
 						timerForKeyPress--;
 						if(timerForKeyPress == 0)
 						{
-							//TODO
+
 							button_BUT2_LongPressed_flag = 1;
 							timerForKeyPress = 300;
 						}
@@ -138,30 +133,28 @@ void getKeyInput()
 				}
 			}
 		}
-		//handle button 3
+
 		if(i == 2){
 			keyReg2[i] = HAL_GPIO_ReadPin(BUT3_GPIO_Port, BUT3_Pin);
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
 			{
-				//case short pressed
+
 				if(keyReg3[i] != keyReg2[i])
 				{
-					keyReg3[i] = keyReg2[i]; //update for keyReg3
+					keyReg3[i] = keyReg2[i];
 					if(keyReg2[i] == PRESSED_STATE)
 					{
-						//TODO
 						button_BUT3_flag = 1;
 						timerForKeyPress = 300;
 					}
 				}
-				else// case long pressed
+				else
 				{
 					if(keyReg2[i] == PRESSED_STATE){
 						timerForKeyPress--;
 						if(timerForKeyPress == 0)
 						{
-							//TODO
 							button_BUT3_LongPressed_flag = 1;
 							timerForKeyPress = 300;
 						}

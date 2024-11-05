@@ -178,7 +178,6 @@ void getKeyInput()
  80001be:	2300      	movs	r3, #0
  80001c0:	607b      	str	r3, [r7, #4]
  80001c2:	e11a      	b.n	80003fa <getKeyInput+0x242>
-		// button debouncing
 		keyReg0[i] = keyReg1[i];
  80001c4:	4a91      	ldr	r2, [pc, #580]	; (800040c <getKeyInput+0x254>)
  80001c6:	687b      	ldr	r3, [r7, #4]
@@ -193,7 +192,6 @@ void getKeyInput()
  80001dc:	498b      	ldr	r1, [pc, #556]	; (800040c <getKeyInput+0x254>)
  80001de:	687b      	ldr	r3, [r7, #4]
  80001e0:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
-		//handle button 1
 		if(i == 0){
  80001e4:	687b      	ldr	r3, [r7, #4]
  80001e6:	2b00      	cmp	r3, #0
@@ -207,7 +205,7 @@ void getKeyInput()
  80001f8:	4a86      	ldr	r2, [pc, #536]	; (8000414 <getKeyInput+0x25c>)
  80001fa:	687b      	ldr	r3, [r7, #4]
  80001fc:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
  8000200:	4a83      	ldr	r2, [pc, #524]	; (8000410 <getKeyInput+0x258>)
  8000202:	687b      	ldr	r3, [r7, #4]
@@ -226,8 +224,7 @@ void getKeyInput()
  8000224:	429a      	cmp	r2, r3
  8000226:	d135      	bne.n	8000294 <getKeyInput+0xdc>
 			{
-				 //case short pressed
-				if(keyReg3[i] != keyReg2[i])
+				 if(keyReg3[i] != keyReg2[i])
  8000228:	4a7c      	ldr	r2, [pc, #496]	; (800041c <getKeyInput+0x264>)
  800022a:	687b      	ldr	r3, [r7, #4]
  800022c:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
@@ -237,7 +234,7 @@ void getKeyInput()
  8000238:	429a      	cmp	r2, r3
  800023a:	d015      	beq.n	8000268 <getKeyInput+0xb0>
 				{
-					keyReg3[i] = keyReg2[i]; // update for keyReg3
+					keyReg3[i] = keyReg2[i];
  800023c:	4a75      	ldr	r2, [pc, #468]	; (8000414 <getKeyInput+0x25c>)
  800023e:	687b      	ldr	r3, [r7, #4]
  8000240:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
@@ -251,7 +248,6 @@ void getKeyInput()
  8000254:	2b00      	cmp	r3, #0
  8000256:	d11d      	bne.n	8000294 <getKeyInput+0xdc>
 					{
-						//TODO
 						button_BUT1_flag = 1;
  8000258:	4b71      	ldr	r3, [pc, #452]	; (8000420 <getKeyInput+0x268>)
  800025a:	2201      	movs	r2, #1
@@ -283,7 +279,6 @@ void getKeyInput()
  8000282:	2b00      	cmp	r3, #0
  8000284:	d106      	bne.n	8000294 <getKeyInput+0xdc>
 						{
-							//TODO
 							button_BUT1_LongPressed_flag = 1;
  8000286:	4b68      	ldr	r3, [pc, #416]	; (8000428 <getKeyInput+0x270>)
  8000288:	2201      	movs	r2, #1
@@ -296,7 +291,7 @@ void getKeyInput()
 				}
 			}
 		}
-		//handle button 2
+
 		if(i == 1){
  8000294:	687b      	ldr	r3, [r7, #4]
  8000296:	2b01      	cmp	r3, #1
@@ -310,7 +305,7 @@ void getKeyInput()
  80002a8:	4a5a      	ldr	r2, [pc, #360]	; (8000414 <getKeyInput+0x25c>)
  80002aa:	687b      	ldr	r3, [r7, #4]
  80002ac:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
  80002b0:	4a57      	ldr	r2, [pc, #348]	; (8000410 <getKeyInput+0x258>)
  80002b2:	687b      	ldr	r3, [r7, #4]
@@ -329,7 +324,7 @@ void getKeyInput()
  80002d4:	429a      	cmp	r2, r3
  80002d6:	d135      	bne.n	8000344 <getKeyInput+0x18c>
 			{
-				//case short pressed
+
 				if(keyReg3[i] != keyReg2[i])
  80002d8:	4a50      	ldr	r2, [pc, #320]	; (800041c <getKeyInput+0x264>)
  80002da:	687b      	ldr	r3, [r7, #4]
@@ -340,7 +335,7 @@ void getKeyInput()
  80002e8:	429a      	cmp	r2, r3
  80002ea:	d015      	beq.n	8000318 <getKeyInput+0x160>
 				{
-					keyReg3[i] = keyReg2[i]; // update for keyReg3
+					keyReg3[i] = keyReg2[i];
  80002ec:	4a49      	ldr	r2, [pc, #292]	; (8000414 <getKeyInput+0x25c>)
  80002ee:	687b      	ldr	r3, [r7, #4]
  80002f0:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
@@ -354,7 +349,7 @@ void getKeyInput()
  8000304:	2b00      	cmp	r3, #0
  8000306:	d11d      	bne.n	8000344 <getKeyInput+0x18c>
 					{
-						//TODO
+
 						button_BUT2_flag = 1;
  8000308:	4b48      	ldr	r3, [pc, #288]	; (800042c <getKeyInput+0x274>)
  800030a:	2201      	movs	r2, #1
@@ -366,7 +361,7 @@ void getKeyInput()
  8000316:	e015      	b.n	8000344 <getKeyInput+0x18c>
 					}
 				}
-				else// key long pressed
+				else
 				{
 					if(keyReg2[i] == PRESSED_STATE){
  8000318:	4a3e      	ldr	r2, [pc, #248]	; (8000414 <getKeyInput+0x25c>)
@@ -386,7 +381,7 @@ void getKeyInput()
  8000332:	2b00      	cmp	r3, #0
  8000334:	d106      	bne.n	8000344 <getKeyInput+0x18c>
 						{
-							//TODO
+
 							button_BUT2_LongPressed_flag = 1;
  8000336:	4b3e      	ldr	r3, [pc, #248]	; (8000430 <getKeyInput+0x278>)
  8000338:	2201      	movs	r2, #1
@@ -399,7 +394,7 @@ void getKeyInput()
 				}
 			}
 		}
-		//handle button 3
+
 		if(i == 2){
  8000344:	687b      	ldr	r3, [r7, #4]
  8000346:	2b02      	cmp	r3, #2
@@ -413,7 +408,7 @@ void getKeyInput()
  8000358:	4a2e      	ldr	r2, [pc, #184]	; (8000414 <getKeyInput+0x25c>)
  800035a:	687b      	ldr	r3, [r7, #4]
  800035c:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
-			// if the button not bounce
+
 			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
  8000360:	4a2b      	ldr	r2, [pc, #172]	; (8000410 <getKeyInput+0x258>)
  8000362:	687b      	ldr	r3, [r7, #4]
@@ -432,7 +427,7 @@ void getKeyInput()
  8000384:	429a      	cmp	r2, r3
  8000386:	d135      	bne.n	80003f4 <getKeyInput+0x23c>
 			{
-				//case short pressed
+
 				if(keyReg3[i] != keyReg2[i])
  8000388:	4a24      	ldr	r2, [pc, #144]	; (800041c <getKeyInput+0x264>)
  800038a:	687b      	ldr	r3, [r7, #4]
@@ -443,7 +438,7 @@ void getKeyInput()
  8000398:	429a      	cmp	r2, r3
  800039a:	d015      	beq.n	80003c8 <getKeyInput+0x210>
 				{
-					keyReg3[i] = keyReg2[i]; //update for keyReg3
+					keyReg3[i] = keyReg2[i];
  800039c:	4a1d      	ldr	r2, [pc, #116]	; (8000414 <getKeyInput+0x25c>)
  800039e:	687b      	ldr	r3, [r7, #4]
  80003a0:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
@@ -457,7 +452,6 @@ void getKeyInput()
  80003b4:	2b00      	cmp	r3, #0
  80003b6:	d11d      	bne.n	80003f4 <getKeyInput+0x23c>
 					{
-						//TODO
 						button_BUT3_flag = 1;
  80003b8:	4b1e      	ldr	r3, [pc, #120]	; (8000434 <getKeyInput+0x27c>)
  80003ba:	2201      	movs	r2, #1
@@ -469,7 +463,7 @@ void getKeyInput()
  80003c6:	e015      	b.n	80003f4 <getKeyInput+0x23c>
 					}
 				}
-				else// case long pressed
+				else
 				{
 					if(keyReg2[i] == PRESSED_STATE){
  80003c8:	4a12      	ldr	r2, [pc, #72]	; (8000414 <getKeyInput+0x25c>)
@@ -489,7 +483,6 @@ void getKeyInput()
  80003e2:	2b00      	cmp	r3, #0
  80003e4:	d106      	bne.n	80003f4 <getKeyInput+0x23c>
 						{
-							//TODO
 							button_BUT3_LongPressed_flag = 1;
  80003e6:	4b14      	ldr	r3, [pc, #80]	; (8000438 <getKeyInput+0x280>)
  80003e8:	2201      	movs	r2, #1
@@ -2544,7 +2537,6 @@ void fsm_traffic_blink_vertical_run(){
 		case green_vertical:
 			setGreen_vertical();
  800127a:	f000 fd95 	bl	8001da8 <setGreen_vertical>
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_green_vertical_temp/10;
  800127e:	4b78      	ldr	r3, [pc, #480]	; (8001460 <fsm_traffic_blink_vertical_run+0x238>)
  8001280:	681b      	ldr	r3, [r3, #0]
@@ -2635,7 +2627,6 @@ void fsm_traffic_blink_vertical_run(){
 		case yellow_vertical:
 			setYellow_vertical();
  800131e:	f000 fd5b 	bl	8001dd8 <setYellow_vertical>
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_yellow_vertical_temp/10;
  8001322:	4b55      	ldr	r3, [pc, #340]	; (8001478 <fsm_traffic_blink_vertical_run+0x250>)
  8001324:	681b      	ldr	r3, [r3, #0]
@@ -2719,7 +2710,6 @@ void fsm_traffic_blink_vertical_run(){
 		case red_vertical:
 			setRed_vertical();
  80013b0:	f000 fce2 	bl	8001d78 <setRed_vertical>
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_red_vertical_temp/10;
  80013b4:	4b32      	ldr	r3, [pc, #200]	; (8001480 <fsm_traffic_blink_vertical_run+0x258>)
  80013b6:	681b      	ldr	r3, [r3, #0]
@@ -2856,7 +2846,6 @@ void fsm_traffic_horizontal_run(){
 			break;
  80014ac:	e02d      	b.n	800150a <fsm_traffic_horizontal_run+0x86>
 		case modifying_led_red_horizontal:
-			// turn off led green and yellow
 			offGreenYellow_horizontal();
  80014ae:	f000 fcf7 	bl	8001ea0 <offGreenYellow_horizontal>
 			if(timer8_flag == 1){
@@ -2864,7 +2853,6 @@ void fsm_traffic_horizontal_run(){
  80014b4:	681b      	ldr	r3, [r3, #0]
  80014b6:	2b01      	cmp	r3, #1
  80014b8:	d122      	bne.n	8001500 <fsm_traffic_horizontal_run+0x7c>
-				//toggle led red with frequency 2Hz
 				toggleRed_horizontal();
  80014ba:	f000 fcaf 	bl	8001e1c <toggleRed_horizontal>
 				setTimer8(500);
@@ -3004,7 +2992,7 @@ void fsm_traffic_vertical_run(){
 			break;
  80015c4:	e010      	b.n	80015e8 <fsm_traffic_vertical_run+0xd0>
 		case modifying_led_green_vertical:
-			// turn off red and yellow led
+
 			offRedYellow_vertical();
  80015c6:	f000 fcbf 	bl	8001f48 <offRedYellow_vertical>
 			if(timer7_flag == 1){
@@ -3012,7 +3000,7 @@ void fsm_traffic_vertical_run(){
  80015cc:	681b      	ldr	r3, [r3, #0]
  80015ce:	2b01      	cmp	r3, #1
  80015d0:	d10c      	bne.n	80015ec <fsm_traffic_vertical_run+0xd4>
-				//toggle green led with frequency 2Hz
+
 				toggleGreen_vertical();
  80015d2:	f000 fc4d 	bl	8001e70 <toggleGreen_vertical>
 				setTimer7(500);

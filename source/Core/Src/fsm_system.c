@@ -33,7 +33,6 @@ fsm_system_run(){
 			status_7SEG_horizontal = display_mode02;
 			status_7SEG_vertical = display_time_value;
 
-			//vertical button is used to increase the time duration value for the red LEDs
 			if(isButton_BUT2_Pressed() == 1){
 				time_red_horizontal++;
 				time_red_vertical++;
@@ -42,13 +41,13 @@ fsm_system_run(){
 			_7SEG_buffer_vertical[0] = time_red_vertical/10;
 			_7SEG_buffer_vertical[1] = time_red_vertical%10;
 
-			//The third button is used to set the value
+			//nut nhan ba duoc dung de set gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_red_horizontal_temp= time_red_horizontal;
 				time_red_vertical_temp= time_red_vertical;
 			}
 
-			// change into MODE3
+			// chuyen sang mode 3
 			if(isButton_BUT1_Pressed() == 1){
 				status_system = MODE3;
 			}
@@ -59,7 +58,6 @@ fsm_system_run(){
 			status_7SEG_horizontal = display_mode03;
 			status_7SEG_vertical = display_time_value;
 
-			//vertical button is used to increase the time duration value for the yellow LEDs
 			if(isButton_BUT2_Pressed() == 1){
 				time_yellow_horizontal++;
 				time_yellow_vertical++;
@@ -68,12 +66,12 @@ fsm_system_run(){
 			_7SEG_buffer_vertical[0] = time_yellow_vertical/10;
 			_7SEG_buffer_vertical[1] = time_yellow_vertical%10;
 
-			//The third button is used to set the value
+			//nut nhan ba duoc dung de set gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_yellow_horizontal_temp= time_yellow_horizontal;
 				time_yellow_vertical_temp= time_yellow_vertical;
 			}
-			// change into MODE4
+			// chuyen sang mode 4
 			if(isButton_BUT1_Pressed() == 1){
 				status_system = MODE4;
 			}
@@ -84,21 +82,19 @@ fsm_system_run(){
 			status_7SEG_horizontal = display_mode04;
 			status_7SEG_vertical = display_time_value;
 
-			//vertical button is used to increase the time duration value for the green LEDs
 			if(isButton_BUT2_Pressed() == 1){
 				time_green_horizontal++;
 				time_green_vertical++;
 			}
-			//update buffer
 			_7SEG_buffer_vertical[0] = time_green_vertical/10;
-			_7SEG_buffer_vertical[1] = time_green_vertical%10;
+		    _7SEG_buffer_vertical[1] = time_green_vertical%10;
 
-			//The third button is used to set the value
+			//nut nhan ba duoc dung de set gia tri
 			if(isButton_BUT3_Pressed() == 1){
 				time_green_horizontal_temp= time_green_horizontal;
 				time_green_vertical_temp= time_green_vertical;
 			}
-			// turn back into MODE1
+			// quay lai mode 1
 			if(isButton_BUT1_Pressed() == 1){
 				status_traffic_blink_horizontal = init_horizontal;
 				status_traffic_blink_vertical = init_vertical;

@@ -20,7 +20,7 @@ void fsm_traffic_blink_horizontal_run(){
 		case init_horizontal:
 			status_traffic_blink_horizontal = red_horizontal;
 			traffic_buffer_horizontal[0] = time_red_horizontal*1000;
-			setTimer1(traffic_buffer_horizontal[0]);//led red will turn on in traffic_buffer_horizontal[0]/1000 verticals
+			setTimer1(traffic_buffer_horizontal[0]);
 			setTimer3(1000);// count down as a clock
 			break;
 		case red_horizontal:
@@ -101,7 +101,6 @@ void fsm_traffic_blink_vertical_run(){
 			break;
 		case green_vertical:
 			setGreen_vertical();
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_green_vertical_temp/10;
 			_7SEG_buffer_vertical[1] = time_green_vertical_temp%10;
 
@@ -123,7 +122,6 @@ void fsm_traffic_blink_vertical_run(){
 			break;
 		case yellow_vertical:
 			setYellow_vertical();
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_yellow_vertical_temp/10;
 			_7SEG_buffer_vertical[1] = time_yellow_vertical_temp%10;
 
@@ -144,7 +142,6 @@ void fsm_traffic_blink_vertical_run(){
 			break;
 		case red_vertical:
 			setRed_vertical();
-			//update _7SEG_buffer_vertical
 			_7SEG_buffer_vertical[0] = time_red_vertical_temp/10;
 			_7SEG_buffer_vertical[1] = time_red_vertical_temp%10;
 
